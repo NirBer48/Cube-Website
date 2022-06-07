@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateTotal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTotalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="showAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="showAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="showAccountVisa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="showAccountVisaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showAccountVisaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateTotalSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTotal" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTotalSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="showAllSoapIn">
+    <wsdl:part name="parameters" element="tns:showAll" />
+  </wsdl:message>
+  <wsdl:message name="showAllSoapOut">
+    <wsdl:part name="parameters" element="tns:showAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="showAccountVisaSoapIn">
+    <wsdl:part name="parameters" element="tns:showAccountVisa" />
+  </wsdl:message>
+  <wsdl:message name="showAccountVisaSoapOut">
+    <wsdl:part name="parameters" element="tns:showAccountVisaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsDateSoapIn">
+    <wsdl:part name="parameters" element="tns:IsDate" />
+  </wsdl:message>
+  <wsdl:message name="IsDateSoapOut">
+    <wsdl:part name="parameters" element="tns:IsDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValidSoapIn">
+    <wsdl:part name="parameters" element="tns:isValid" />
+  </wsdl:message>
+  <wsdl:message name="isValidSoapOut">
+    <wsdl:part name="parameters" element="tns:isValidResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="UpdateTotal">
+      <wsdl:input message="tns:UpdateTotalSoapIn" />
+      <wsdl:output message="tns:UpdateTotalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="showAll">
+      <wsdl:input message="tns:showAllSoapIn" />
+      <wsdl:output message="tns:showAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="showAccountVisa">
+      <wsdl:input message="tns:showAccountVisaSoapIn" />
+      <wsdl:output message="tns:showAccountVisaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDate">
+      <wsdl:input message="tns:IsDateSoapIn" />
+      <wsdl:output message="tns:IsDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValid">
+      <wsdl:input message="tns:isValidSoapIn" />
+      <wsdl:output message="tns:isValidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTotal">
+      <soap:operation soapAction="http://tempuri.org/UpdateTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showAll">
+      <soap:operation soapAction="http://tempuri.org/showAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showAccountVisa">
+      <soap:operation soapAction="http://tempuri.org/showAccountVisa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDate">
+      <soap:operation soapAction="http://tempuri.org/IsDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValid">
+      <soap:operation soapAction="http://tempuri.org/isValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTotal">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showAll">
+      <soap12:operation soapAction="http://tempuri.org/showAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showAccountVisa">
+      <soap12:operation soapAction="http://tempuri.org/showAccountVisa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDate">
+      <soap12:operation soapAction="http://tempuri.org/IsDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValid">
+      <soap12:operation soapAction="http://tempuri.org/isValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:12621/WebServiceVisa/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:12621/WebServiceVisa/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
