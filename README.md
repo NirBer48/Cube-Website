@@ -10,3 +10,5 @@ A Rubik's Cube shop based website with 3 levels of access (Admin, Customer, Visi
 
 ![image](https://user-images.githubusercontent.com/106924157/172373207-43d3f1ae-36d4-4ab8-a4d1-2394766f0fa8.png)
 
+
+![image](https://user-images.githubusercontent.com/106924157/172374691-1757e52c-62df-4bee-811d-fd5e78552e25.png)
