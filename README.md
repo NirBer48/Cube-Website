@@ -1,5 +1,5 @@
 
-A Rubik's Cube shop based website with 3 levels of access (Admin, Customer, Visitor). Multiple access tabels and diverse pages with many functions.
+A Rubik's Cube shop based website with 3 levels of access (Admin, Customer, Visitor). Multiple access tables and diverse pages with many functions.
 
 
 ![image](https://user-images.githubusercontent.com/106924157/172374196-f4e13841-5c57-499d-bdb8-9a29b52cb8cf.png)
